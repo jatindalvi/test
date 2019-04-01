@@ -383,7 +383,8 @@ named repeat rules of the Fortran-specific repeats. The template rules
 for these files are:
 
 1. "/\**begin repeat "on a line by itself marks the beginning of
- a segment that should be repeated.
+a segment that should be repeated.
+
 2. Named variable expansions are defined using #name=item1, item2, item3,
 ..., itemN# and placed on successive lines. These variables are
 replaced in each repeat block with corresponding word. All named
