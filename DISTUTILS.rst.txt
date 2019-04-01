@@ -400,9 +400,9 @@ words.
 3. In specifying the repeat rule for a named variable, ``item*N`` is short-
 hand for ``item, item, ..., item`` repeated N times. In addition,
 parenthesis in combination with \*N can be used for grouping several
-items that should be repeated. Thus, #name=(item1, item2)*4# is
-equivalent to #name=item1, item2, item1, item2, item1, item2, item1,
-item2#
+items that should be repeated. Thus, ``#name=(item1, item2)*4#`` is
+equivalent to ``#name=item1, item2, item1, item2, item1, item2, item1,
+item2#``
 
 4. "\*/ "on a line by itself marks the end of the variable expansion
 naming. The next line is the first line that will be repeated using
@@ -414,9 +414,9 @@ are specified as @name@.
 6. "/\**end repeat**/ "on a line by itself marks the previous line
 as the last line of the block to be repeated.
 
-7. A loop in the NumPy C source code may have a @TYPE@ variable, targeted for
+7. A loop in the NumPy C source code may have a ``@TYPE@`` variable, targeted for
 string substitution, which is preprocessed to a number of otherwise identical
-loops with several strings such as INT, LONG, UINT, ULONG. The @TYPE@ style syntax
+loops with several strings such as INT, LONG, UINT, ULONG. The ``@TYPE@`` style syntax
 thus reduces code duplication and maintenance burden by mimicking languages that
 have generic type support.
 
@@ -461,6 +461,8 @@ by conv_template.py. The type specific C files generated (extension: .c)
 by these modules during the build process are ready to be compiled. This
 form of generic typing is also supported for C header files (preprocessed
 to produce .h files).
+
+.. _conv_template.py: https://github.com/numpy/numpy/blob/master/numpy/distutils/conv_template.py
 
 Useful functions in ``numpy.distutils.misc_util``
 -------------------------------------------------
