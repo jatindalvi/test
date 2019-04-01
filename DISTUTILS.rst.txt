@@ -455,6 +455,13 @@ template source example::
 
     /**end repeat**/
 
+The preprocessing of generically typed C source files (whether in NumPy
+proper or in any third party package using NumPy Distutils) is performed
+by conv_template.py. The type specific C files generated (extension: .c)
+by these modules during the build process are ready to be compiled. This 
+form of generic typing is also supported for C header files (preprocessed
+ to produce .h files).
+
 Useful functions in ``numpy.distutils.misc_util``
 -------------------------------------------------
 
