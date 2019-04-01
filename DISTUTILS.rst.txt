@@ -391,22 +391,22 @@ replaced in each repeat block with corresponding word. All named
 variables in the same repeat block must define the same number of
 words.
 
- 3. In specifying the repeat rule for a named variable, item*N is short-
-   hand for item, item, ..., item repeated N times. In addition,
-   parenthesis in combination with \*N can be used for grouping several
-   items that should be repeated. Thus, #name=(item1, item2)*4# is
-   equivalent to #name=item1, item2, item1, item2, item1, item2, item1,
-   item2#
+3. In specifying the repeat rule for a named variable, item*N is short-
+hand for item, item, ..., item repeated N times. In addition,
+parenthesis in combination with \*N can be used for grouping several
+items that should be repeated. Thus, #name=(item1, item2)*4# is
+equivalent to #name=item1, item2, item1, item2, item1, item2, item1,
+item2#
 
- 4. "\*/ "on a line by itself marks the end of the variable expansion
-   naming. The next line is the first line that will be repeated using
-   the named rules.
+4. "\*/ "on a line by itself marks the end of the variable expansion
+naming. The next line is the first line that will be repeated using
+the named rules.
 
- 5. Inside the block to be repeated, the variables that should be expanded
-   are specified as @name@.
+5. Inside the block to be repeated, the variables that should be expanded
+are specified as @name@.
 
- 6. "/\**end repeat**/ "on a line by itself marks the previous line
-   as the last line of the block to be repeated.
+6. "/\**end repeat**/ "on a line by itself marks the previous line
+as the last line of the block to be repeated.
 
 Useful functions in ``numpy.distutils.misc_util``
 -------------------------------------------------
