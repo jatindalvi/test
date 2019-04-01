@@ -460,7 +460,7 @@ proper or in any third party package using NumPy Distutils) is performed
 by conv_template.py. The type specific C files generated (extension: .c)
 by these modules during the build process are ready to be compiled. This
 form of generic typing is also supported for C header files (preprocessed
-to produce .h files).
+to produce :file:`.h` files).
 
 .. _conv_template.py: https://github.com/numpy/numpy/blob/master/numpy/distutils/conv_template.py
 
