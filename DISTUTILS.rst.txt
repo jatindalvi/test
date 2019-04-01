@@ -408,6 +408,48 @@ are specified as @name@.
 6. "/\**end repeat**/ "on a line by itself marks the previous line
 as the last line of the block to be repeated.
 
+7. A loop in the NumPy C source code may have a @TYPE@ variable, targeted for
+string substitution, which is preprocessed to a number of otherwise identical
+loops with several strings such as INT, LONG, UINT, ULONG. The @TYPE@ style syntax
+thus reduces code duplication and maintenance burden by mimicking languages that
+have generic type support.
+
+8. The above rules may be clearer in the following
+template source example:
+
+/* TIMEDELTA to non-float types */
+
+/**begin repeat
+ *
+ * #TOTYPE = BYTE, UBYTE, SHORT, USHORT, INT, UINT, LONG, ULONG,
+ *           LONGLONG, ULONGLONG, DATETIME,
+ *           TIMEDELTA#
+ * #totype = npy_byte, npy_ubyte, npy_short, npy_ushort, npy_int, npy_uint,
+ *           npy_long, npy_ulong, npy_longlong, npy_ulonglong,
+ *           npy_datetime, npy_timedelta#
+ */
+
+/**begin repeat1
+ *
+ * #FROMTYPE = TIMEDELTA#
+ * #fromtype = npy_timedelta#
+ */
+static void
+@FROMTYPE@_to_@TOTYPE@(void *input, void *output, npy_intp n,
+        void *NPY_UNUSED(aip), void *NPY_UNUSED(aop))
+{
+    const @fromtype@ *ip = input;
+    @totype@ *op = output;
+
+    while (n--) {
+        *op++ = (@totype@)*ip++;
+    }
+}
+/**end repeat1**/
+
+/**end repeat**/
+
+
 Useful functions in ``numpy.distutils.misc_util``
 -------------------------------------------------
 
