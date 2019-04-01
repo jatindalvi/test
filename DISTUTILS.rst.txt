@@ -298,7 +298,7 @@ in writing setup scripts:
 + ``config.get_info(*names)`` ---
 
 Conversion of ``.src`` files using Templates
-============================================
+--------------
 
 Other files
 --------------
