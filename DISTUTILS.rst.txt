@@ -379,8 +379,14 @@ Other files
 
 Non-Fortran files use a separate syntax for defining template blocks
 that should be repeated using a variable expansion similar to the
-named repeat rules of the Fortran-specific repeats. The template rules
-for these files are:
+named repeat rules of the Fortran-specific repeats.
+
+NumPy Distutils preprocesses C source files (extension: :file:`.c.src`) written
+in a custom templating language to generate C code. The :c:data:`@` symbol is
+used to wrap macro-style variables to empower a string substitution mechansim
+that might describe (for instance) a set of data types.
+
+The template rules for these files are:
 
 1. "/\**begin repeat "on a line by itself marks the beginning of
 a segment that should be repeated.
